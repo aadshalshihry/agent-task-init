@@ -38,11 +38,10 @@ bunx agent-task-init@github:username/agent-task-init /path/to/my/project
 npx --yes github:username/agent-task-init /path/to/my/project
 ```
 
-## What it Does
-This generator will create the following structure in the target directory:
-- `.tasks/pending/`: A folder to queue up markdown files containing tasks.
-- `.tasks/in-progress/`: A folder for tasks actively being worked on.
-- `.tasks/done/`: A folder for completed tasks.
-- `.tasks/TEMPLATE.md`: A standard markdown template (Objective, Requirements, Not To Do, How To Test The Code) for writing new tasks.
-- `.tasks/GUIDELINES.md`: Base rules for the agent.
-- `.agents/skills/task_manager/SKILL.md`: The actionable skill teaching the agent how to process the queue.
+## How to Instruct the Agent
+Once the task structure is generated, you write your tasks inside `.tasks/pending/` (using `.tasks/TEMPLATE.md` as a starting point). 
+
+To trigger the agent to work, you can simply message it:
+> *"Please use your task_manager skill to read and process the pending queue."*
+
+The agent will read the global guidelines and autonomously move files between `pending`, `in-progress`, and `done` as it works.
