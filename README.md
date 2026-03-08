@@ -39,9 +39,17 @@ npx --yes github:username/agent-task-init /path/to/my/project
 ```
 
 ## How to Instruct the Agent
-Once the task structure is generated, you write your tasks inside `.tasks/pending/` (using `.tasks/TEMPLATE.md` as a starting point). 
 
-To trigger the agent to work, you can simply message it:
+### 1. Generating a Task Breakdown (Planning)
+If you have a large feature to build and want the agent to figure out the steps, you can ask the agent to act as a planner and populate the task queue for you.
+
+> *"I want to build [insert feature]. Please act as a planner. Break this down into multiple small, sequential tasks and create a new markdown file for each step in `.tasks/pending/` using the `.tasks/TEMPLATE.md` format."*
+
+The agent will analyze your request and generate `01-setup.md`, `02-database.md`, `03-api.md`, etc., directly into the pending queue.
+
+### 2. Executing the Tasks (Doing)
+Once the task structure is generated and you are happy with the breakdown in `.tasks/pending/`, you can trigger the agent to start working:
+
 > *"Please use your task_manager skill to read and process the pending queue."*
 
 The agent will read the global guidelines and autonomously move files between `pending`, `in-progress`, and `done` as it works.
