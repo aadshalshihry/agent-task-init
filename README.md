@@ -25,14 +25,17 @@ init-task-manager /path/to/my/project
 ### Running Directly from GitHub
 Once you push this project to a GitHub repository, you can execute it instantly in any project without downloading the source code manually. 
 
-Assuming your repository is `username/ai-agent-task-manager`:
+Assuming your repository is `username/agent-task-init`:
 
 ```bash
-# Using bunx
-bunx github:username/ai-agent-task-manager
+# Using bunx (Requires prefixing the package name before the github URL)
+bunx agent-task-init@github:username/agent-task-init
 
 # Or specific path
-bunx github:username/ai-agent-task-manager /path/to/my/project
+bunx agent-task-init@github:username/agent-task-init /path/to/my/project
+
+# Alternatively, using npx:
+npx --yes github:username/agent-task-init /path/to/my/project
 ```
 
 ## What it Does
