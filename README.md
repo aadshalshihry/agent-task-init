@@ -40,5 +40,6 @@ This generator will create the following structure in the target directory:
 - `.tasks/pending/`: A folder to queue up markdown files containing tasks.
 - `.tasks/in-progress/`: A folder for tasks actively being worked on.
 - `.tasks/done/`: A folder for completed tasks.
+- `.tasks/TEMPLATE.md`: A standard markdown template (Objective, Requirements, Not To Do, How To Test The Code) for writing new tasks.
 - `.tasks/GUIDELINES.md`: Base rules for the agent.
 - `.agents/skills/task_manager/SKILL.md`: The actionable skill teaching the agent how to process the queue.

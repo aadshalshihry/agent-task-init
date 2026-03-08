@@ -93,6 +93,26 @@ Once you are confident the task is successfully completed:
 ### 7. Report / Continue
 Inform the user that the task is complete. If the user instructed you to process the entire queue autonomously, return to Step 2. Otherwise, await further instructions.
 `;
+  // Template Content
+  const templateContent = `# Task Title
+
+## Objective
+[Clear and concise description of what needs to be achieved in this task]
+
+## Requirements
+- [Requirement 1: e.g., Implement X using Y]
+- [Requirement 2: e.g., Ensure the output is formatted as Z]
+- [Requirement 3]
+
+## Not To Do
+- [Anti-pattern 1: e.g., Do NOT modify the core database schema]
+- [Anti-pattern 2: e.g., Do NOT use external libraries]
+
+## How To Test The Code
+1. [Step 1 to verify functionality]
+2. [Step 2 to verify edge cases]
+3. [Expected outcome of the tests]
+`;
 
   // Write files
   const guidelinesPath = join(targetDir, '.tasks', 'GUIDELINES.md');
@@ -105,6 +125,12 @@ Inform the user that the task is complete. If the user instructed you to process
   if (!existsSync(skillPath)) {
     await writeFile(skillPath, skillContent);
     console.log('Created .agents/skills/task_manager/SKILL.md');
+  }
+
+  const templatePath = join(targetDir, '.tasks', 'TEMPLATE.md');
+  if (!existsSync(templatePath)) {
+    await writeFile(templatePath, templateContent);
+    console.log('Created .tasks/TEMPLATE.md');
   }
 
   console.log("Task Manager initialization complete!");
