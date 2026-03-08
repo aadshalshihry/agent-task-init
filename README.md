@@ -4,7 +4,8 @@ This is a CLI tool designed to inject an AI Agent Task Manager into **any** proj
 
 ## Installation & Usage
 
-You can run it directly using `bun`:
+### Running Locally
+You can run it directly using `bun` from the source code:
 
 ```bash
 # Run in the current directory
@@ -19,6 +20,19 @@ Or you can link it globally:
 ```bash
 bun link
 init-task-manager /path/to/my/project
+```
+
+### Running Directly from GitHub
+Once you push this project to a GitHub repository, you can execute it instantly in any project without downloading the source code manually. 
+
+Assuming your repository is `username/ai-agent-task-manager`:
+
+```bash
+# Using bunx
+bunx github:username/ai-agent-task-manager
+
+# Or specific path
+bunx github:username/ai-agent-task-manager /path/to/my/project
 ```
 
 ## What it Does
